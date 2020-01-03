@@ -9,10 +9,19 @@
 
    <h3><ad></ad></h3> 
 
-    <button style.backgroundColor="{{isActive}}?'blue':'grey'">
-      Submit
-    </button>
+    <button (click)="onClick($event)" [style.backgroundColor]="isActive ? 'blue':'gray'" [disabled]="!isActive">Submit</button>
+     
+    <h2 (mousemove) = "onMove($event)" (click)="onClick($event)">Mouse coordinates {{coordinates}}</h2>
   
- 
+    <h3>Example of two way binding
+      <h4>  
+          <input type="text" [(ngModel)]="title">
+          You typed {{title}}
+      </h4>
+
+    
+    </h3>
+
+    <rating></rating>
 
 <router-outlet></router-outlet>
